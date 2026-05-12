@@ -6,7 +6,6 @@ import { Badge } from "@/components/ui/badge";
 import { ArrowLeft } from "lucide-react";
 import { useCart } from "@/hooks/use-cart";
 
-
 export const Route = createFileRoute("/products/$productId")({
   component: ProductPage,
 });
