@@ -4,14 +4,13 @@ import { fetchProduct } from "@/api/products";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowLeft } from "lucide-react";
-import { useCart } from "@/hooks/use-cart";
+import { addToCart } from "@/store/cart-store";
 
 export const Route = createFileRoute("/products/$productId")({
   component: ProductPage,
 });
 
 function ProductPage() {
-  const { addToCart } = useCart();
   const { productId } = Route.useParams();
   const parsedProductId = Number(productId);
   const isInvalidProductId = Number.isNaN(parsedProductId);
